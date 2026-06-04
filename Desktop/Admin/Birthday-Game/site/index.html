@@ -946,11 +946,9 @@ function drawBeachFinal(){
   ctx.fillStyle='#b5443f'; ctx.fillRect(20,14,VIEW_W-40,16);
   ctx.fillStyle='#fff4d6'; ctx.font='7px "Press Start 2P", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
   ctx.fillText('JOYEUX ANNIVERSAIRE ANTOINE', VIEW_W/2, 22);
-  const friends=NPCS.filter(n=>n.id!=='marion'), baseY=VIEW_H*0.66;
-  friends.forEach((n,i)=>{ const fx=14+i*((VIEW_W-28)/friends.length), fy=baseY+((i%2)?6:0);
+  const allFriends=NPCS.slice(), baseY=VIEW_H*0.66;
+  allFriends.forEach((n,i)=>{ const fx=14+i*((VIEW_W-28)/allFriends.length), fy=baseY+((i%2)?6:0);
     drawChar(fx,fy,CHARS[n.char],'down',false,{cheer:true,smile:true}); });
-  drawChar(VIEW_W/2-8,VIEW_H*0.8,CHARS.marion,'down',false,{cheer:true,smile:true});
-  ctx.font='12px serif'; ctx.textAlign='center'; ctx.fillText('💛', VIEW_W/2, VIEW_H*0.76);
   ctx.fillStyle='rgba(15,40,15,.88)'; ctx.fillRect(14,VIEW_H-26,VIEW_W-28,20);
   ctx.fillStyle='#ffd1dc'; ctx.font='6px "Press Start 2P", monospace'; ctx.textBaseline='middle';
   ctx.fillText('Du kitesurf à Marseille bébé !', VIEW_W/2, VIEW_H-16);
