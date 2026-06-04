@@ -548,7 +548,7 @@ function talkMarion(){
       "Marion : Chaque quête réussie te donne un indice sur ta surprise.",
       "Marion : Ouvre ton carnet d'indices avec la touche I quand tu veux.",
       "Marion : Commence par Maxime & Julie, au café. GO GO GO",
-    ], ()=>{ state.marionDone=true; state.group['maxjul']='available'; });
+    ], ()=>{ state.marionDone=true; state.group['maxjul']='available'; document.getElementById('hint').classList.add('hide'); });
   } else if(state.allDone){
     say([
       "Marion : Tu as tes 6 indices ! 🥳",
