@@ -869,10 +869,10 @@ function drawSurfIntro(){
   ctx.textAlign='center'; ctx.textBaseline='middle';
   ctx.fillStyle='#9bdc6a'; ctx.font='9px "Press Start 2P", monospace'; ctx.fillText('LA TRAVERSEE EN SURF', VIEW_W/2, 60);
   ctx.fillStyle='#f6f0d8'; ctx.font='7px "Press Start 2P", monospace';
-  ctx.fillText('Antoine surfe jusqu a la plage !', VIEW_W/2, 84);
+  ctx.fillText('Antoine surfe jusqu’à la plage !', VIEW_W/2, 84);
   ctx.fillText('Esquive les vagues :', VIEW_W/2, 102);
-  ctx.fillStyle='#cfeaf6'; ctx.fillText('FLECHES HAUT / BAS', VIEW_W/2, 116);
-  ctx.fillStyle='#ff9aa2'; ctx.fillText('1 vague touchee = 1 vie en moins', VIEW_W/2, 132);
+  ctx.fillStyle='#cfeaf6'; ctx.fillText('FLÈCHES HAUT / BAS', VIEW_W/2, 116);
+  ctx.fillStyle='#ff9aa2'; ctx.font='6px "Press Start 2P", monospace'; ctx.fillText('1 vague touchée = 1 vie en moins', VIEW_W/2, 132);
   const bw=120,bh=24,bx=VIEW_W/2-bw/2,by=VIEW_H-56;
   ctx.fillStyle='#f2c14e'; ctx.fillRect(bx,by,bw,bh); ctx.fillStyle='#4a2407'; ctx.fillRect(bx,by+bh-3,bw,3);
   ctx.fillStyle='#4a2407'; ctx.font='8px "Press Start 2P", monospace'; ctx.fillText('COMMENCER', VIEW_W/2, by+bh/2);
