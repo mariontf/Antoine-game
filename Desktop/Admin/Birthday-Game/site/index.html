@@ -185,7 +185,7 @@ const NPCS = [
   {id:'kaoutar', char:'kaoutar', x:9, y:17,name:'Kaoutar',group:'emmkao'},
   // Bas-droite — duo
   {id:'katja',   char:'katja',   x:19, y:17,name:'Katja',  group:'katali'},
-  {id:'marijose',char:'marijose',x:21, y:17,name:'Marijose',group:'katali'},
+  {id:'marijose',char:'marijose',x:21, y:17,name:'MJ',group:'katali'},
   // Métro (haut-droite) — duo
   {id:'ethan',  char:'ethan',  x:24, y:5, name:'Ethan', group:'ethdie', tagAbove:true},
   {id:'diego',  char:'diego',  x:23, y:6, name:'Diego', face:'right', group:'ethdie'},
@@ -804,11 +804,11 @@ function drawMarker(sx,sy,ch){
   ctx.fillText(ch, sx+8, sy-10+bob);
 }
 function drawNameTag(sx,sy,name,above){
-  ctx.font='6px "Press Start 2P", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
-  const tw=ctx.measureText(name).width, w=tw+6, h=9, bx=sx+8-w/2, by=above?(sy-14-h):(sy+19);
-  ctx.fillStyle='#e8b91a'; ctx.fillRect(bx-1,by-1,w+2,h+2);   // contour doré
-  ctx.fillStyle='#16320f'; ctx.fillRect(bx,by,w,h);           // fond foncé opaque
-  ctx.fillStyle='#fdf6df'; ctx.fillText(name,sx+8,by+h/2+1);  // texte clair
+  ctx.font='5px "Press Start 2P", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  const tw=ctx.measureText(name).width, w=tw+4, h=7, bx=sx+8-w/2, by=above?(sy-12-h):(sy+20);
+  ctx.fillStyle='#e8b91a'; ctx.fillRect(bx-1,by-1,w+2,h+2);
+  ctx.fillStyle='#16320f'; ctx.fillRect(bx,by,w,h);
+  ctx.fillStyle='#fdf6df'; ctx.fillText(name,sx+8,by+h/2+1);
 }
 function drawHeldBoard(sx,sy){ ctx.fillStyle='#eaf0f2'; ctx.beginPath(); ctx.ellipse(sx-2,sy+5,2.5,11,0,0,7); ctx.fill(); ctx.fillStyle='#7ac0d8'; ctx.fillRect(sx-3,sy-3,2,3); ctx.fillStyle='#c0392b'; ctx.fillRect(sx-3,sy+3,2,5); }
 function drawPlayer(){ if(state.invuln>0 && Math.floor(Date.now()/100)%2===0) return; const sx=Math.round(player.px-cam.x), sy=Math.round(player.py-cam.y);
