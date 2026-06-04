@@ -932,9 +932,7 @@ function drawKitesurf(){
   ctx.fillStyle='#f2c14e'; ctx.beginPath(); ctx.moveTo(kix-10,kiy); ctx.lineTo(kix,kiy-4); ctx.lineTo(kix+10,kiy); ctx.closePath(); ctx.fill();
   ctx.fillStyle='#eaf0f2'; ctx.fillRect(kx-7,ky+11,18,3);
   for(let i=0;i<4;i++) rect(kx-9-i*3, ky+12+(i%2?2:0),2,2,'#dff2fb');
-  rect(kx-1,ky+2,6,8,'#e6b58a'); rect(kx-1,ky+9,6,3,'#2f6bd6'); rect(kx,ky+2,2,8,'#d8a072');
-  rect(kx,ky-5,5,6,'#e6b58a'); rect(kx,ky-6,5,2,'#5a3a1f');
-  rect(kx-3,ky+3,3,2,'#e6b58a'); rect(kx+5,ky+1,2,4,'#e6b58a');
+  drawChar(kx-8,ky-12,CHARS.antoine,'right',Math.floor(Date.now()/200)%2===0);
 }
 function drawBeachFinal(){
   const sky=ctx.createLinearGradient(0,0,0,VIEW_H/2); sky.addColorStop(0,'#ffd39b'); sky.addColorStop(1,'#ffe9c7');
@@ -954,7 +952,7 @@ function drawBeachFinal(){
   drawChar(VIEW_W/2-8,VIEW_H*0.8,CHARS.marion,'down',false,{cheer:true,smile:true});
   ctx.font='12px serif'; ctx.textAlign='center'; ctx.fillText('💛', VIEW_W/2, VIEW_H*0.76);
   ctx.fillStyle='rgba(15,40,15,.88)'; ctx.fillRect(14,VIEW_H-26,VIEW_W-28,20);
-  ctx.fillStyle='#ffd1dc'; ctx.font='8px "Press Start 2P", monospace'; ctx.textBaseline='middle';
+  ctx.fillStyle='#ffd1dc'; ctx.font='6px "Press Start 2P", monospace'; ctx.textBaseline='middle';
   ctx.fillText('Du kitesurf à Marseille bébé !', VIEW_W/2, VIEW_H-16);
   if(confetti.length===0) initConfetti();
   confetti.forEach(p=>{ p.y+=p.vy; if(p.y>VIEW_H){p.y=-4;p.x=Math.random()*VIEW_W;} ctx.fillStyle=p.c; ctx.fillRect(p.x,p.y,p.s,p.s); });
